@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { useEffect } from "react"
 import { useState } from "react"
 
@@ -18,9 +19,8 @@ function Navbar({ isDark, setIsDark }) {
 
     useEffect(() => {
 
-        const getMode = JSON.parse(window.localStorage.getItem("Mode"))
+        let getMode = JSON.parse(window.localStorage.getItem("Mode"))
         if (getMode !== null) {
-            console.log(getMode)
             setIsDark(getMode)
         }
 
@@ -36,7 +36,7 @@ function Navbar({ isDark, setIsDark }) {
 
 
 
-    }, [setIsDark])
+    }, [])
 
 
     useEffect(() => {
@@ -48,13 +48,13 @@ function Navbar({ isDark, setIsDark }) {
     }, [isDark])
 
 
-
+    console.log(isDark)
 
 
     // window.localStorage(module,)
 
     return (
-        <nav className="flex sticky top-0 justify-between items-center py-3 gap-4 z-20">
+        <nav className="flex sticky top-0 justify-between items-center py-3 gap-4 z-20 font-bold">
             <div style={{ display: isMobile ? "none" : 'flex' }} />
             <ul style={{ display: isMobile ? "none" : 'flex', width: "450px" }} className="opacity-90 justify-between gap-3 px-6 py-3 bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white rounded-full shadow-md dark:shadow-md" >
                 <li className="hover:text-sky-600"><a href="#about">About</a></li>
@@ -81,18 +81,17 @@ function Navbar({ isDark, setIsDark }) {
 
             <div style={{ width: "40px", height: "40px", border: "1px solid", borderRadius: "50%" }} className="bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white shadow-md">
                 <button style={{ position: "relative", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} className={`icon-${isDark ? 'brightness-up' : 'moon-o'}  bg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white w-5 text-xl hover:animate-pulse text-center shadow- dark:shadow-md`}
-                    onClick={() => {
-                        return (
-                            isDark ? setIsDark(false) : setIsDark(true)
-                            // isDark ? htmlClassDark() : htmlClassLight()
-
-                        )
-                    }}></button>
+                    onClick={() => setIsDark(!isDark)}></button>
             </div>
         </nav >
 
     )
 }
+
+// Navbar.propTypes = {
+//     isDark: PropTypes.bool.isRequired,
+//     setIsDark: PropTypes.func.isRequired
+// }
 
 export default Navbar
 

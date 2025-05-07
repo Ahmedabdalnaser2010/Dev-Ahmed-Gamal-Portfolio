@@ -1,38 +1,124 @@
 import React from 'react'
-import avatar from '../../../public/Circle image.webp'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
 import webdevelop from '../../../public/animation/web development 4.json'
+import avatar from '../../../public/Circle image.webp'
+
+
 
 function About() {
+
+
+
+    const nameRef = useRef(null);
+    const titleRef = useRef(null);
+    const textRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(SplitText);
+
+        // Store animations and splits for cleanup
+        let animations = [];
+        let splits = [];
+
+        // Name animation (character by character)
+        if (nameRef.current) {
+            const nameSplit = new SplitText(nameRef.current, {
+                type: "chars",
+                charsClass: "char-animate"
+            });
+            splits.push(nameSplit);
+
+            animations.push(
+                gsap.from(nameSplit.chars, {
+                    x: 100,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "back.out",
+                    stagger: 0.05
+                })
+            );
+        }
+
+        // Title animation
+        if (titleRef.current) {
+            const titleSplit = new SplitText(titleRef.current, {
+                type: "chars",
+                charsClass: "char-animate"
+            });
+            splits.push(titleSplit);
+
+            animations.push(
+                gsap.from(titleSplit.chars, {
+                    x: 100,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "back.out",
+                    stagger: 0.05
+                })
+            );
+        }
+
+        // Text animation (line by line)
+        if (textRef.current) {
+            const textSplit = new SplitText(textRef.current, {
+                type: "lines",
+                linesClass: "line-animate"
+            });
+            splits.push(textSplit);
+
+            animations.push(
+                gsap.from(textSplit.lines, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.15,
+                    delay: 0.8,
+                    ease: "power1.out"
+                })
+            );
+        }
+
+        // Cleanup function
+        return () => {
+            animations.forEach(anim => anim.kill());
+            splits.forEach(split => split.revert());
+        };
+    }, []);
+
     return (
         <section id="about" className='min-h-[80vh] '>
-            <div className=' text-slate-600 dark:text-white mt-20 '>
+            <div className=' text-slate-600 dark:text-white mt-10 '>
 
                 <div className='mb-10'>
-                    <motion.img initial={{ transform: 'scale(0)' }} whileInView={{ transform: 'scale(1)' }} transition={{ type: "spring", damping: 8 }} className='w-[180px] mb-6' src={avatar} alt='Avatar'></motion.img>
+                    <motion.img initial={{ transform: 'scale(0)' }} whileInView={{ transform: 'scale(1)' }} viewport={{ once: true, amount: 1 }} transition={{ type: "spring", damping: 8 }} className='w-[180px] mb-6' src={avatar} alt='Avatar'></motion.img>
                     <button className='icon-verified relative left-[180px] bottom-10 text-blue-500'></button>
                 </div>
                 <div className='flex justify-between items-center'>
-                    <div className='w-[280px] sm:w-[450px] md:w-[600px]'>
-                        <h1 className='text-4xl text-black dark:text-white pb-6 font-bold'>I'm Ahmed Gamal</h1>
-                        <h3 className='text-3xl text-black dark:text-white pb-6 font-semibold'>Frontend Developer</h3>
-                        <p className=' text-slate-600 dark:text-gray-200 text-[18px]'>
-                            I am a frontend developer with a solid foundation in modern web technologies and an experience in a creating responsive web projects using <b> HTML5, CSS3, JavaScript, and React.js</b>. I’m a quick learner who enjoys researching data to enhance my work. I’m eager to help clients build engaging websites, including <b>landing pages and e-commerce sites</b>.
+                    <div className='w-[300px] sm:w-[450px] md:w-[600px]'>
+                        <h1 className='text-3xl text-sky-500  dark:text-white pb-6 font-bold flex gap-5'><span className='text-gray-700 dark:text-gray-200'>I'm</span> <span className='dark:text-sky-400' ref={nameRef}>Ahmed Gamal</span></h1>
+                        <h3 ref={titleRef} className='text-2xl text-sky-600 dark:text-white pb-6 font-semibold'>Frontend Developer || React JS</h3>
+                        <p ref={textRef} className=' text-zinc-600 dark:text-white text-[18px] '>
+                            I am a frontend developer with a solid foundation in modern web technologies and an experience in a creating responsive web projects using<span className='font-semibold text-sky-800 dark:text-sky-400'> HTML5, CSS3, Javascript,Typescript, and React.js</span>. I’m a quick learner who enjoys researching data to enhance my work. I’m eager to help clients build engaging websites, including <span className='font-semibold text-sky-800 dark:text-sky-400'>landing pages,web apps and e-commerce websites</span>.
                         </p>
                     </div>
-                    <div className='w-[40%] hidden lg:flex justify-center'>
+                    {/* <div className='w-[40%] hidden lg:flex justify-center'>
                         <Lottie animationData={webdevelop} className='scale-[1.2] '></Lottie>
-                    </div>
+                    </div> */}
                 </div>
-                <div className='flex justify-start items-center gap-[15px] mt-[1.5em] dark:text-gray-200'>
-                    <motion.a initial={{ transform: 'scale(1)' }} whileHover={{ transform: 'scale(1.2)' }} transition={{ type: "spring", damping: 3 }} title='Visit my Repositories' target='blank' href="https://github.com/Ahmedabdalnaser2010"><span className='icon-github text-[25px] hover:text-black'></span> </motion.a>
-                    <motion.a initial={{ transform: 'scale(1)' }} whileHover={{ transform: 'scale(1.2)' }} transition={{ type: "spring", damping: 3 }} title='Visit my Profile' target='blank' href="https://www.linkedin.com/in/ahmed-gamal-395651330/"><span className='icon-linkedin text-[25px] hover:text-blue-600'></span> </motion.a>
-                    <motion.a initial={{ transform: 'scale(1)' }} whileHover={{ transform: 'scale(1.2)' }} transition={{ type: "spring", damping: 3 }} title='Visit my Profile' target='blank' href="https://discord.com/channels/@me"><span className='icon-discord text-[25px] hover:text-blue-600'></span> </motion.a>
-                    <motion.a initial={{ transform: 'scale(1)' }} whileHover={{ transform: 'scale(1.2)' }} transition={{ type: "spring", damping: 3 }} target='blank' title='Mail me' href="mailto:ahmedabdalnaser2024@gmail.com"><span className='icon-google-plus2 text-[25px] hover:text-red-500'></span> </motion.a>
-                    <motion.a initial={{ transform: 'scale(1)' }} whileHover={{ transform: 'scale(1.2)' }} transition={{ type: "spring", damping: 3 }} title='Contact me' target='blank' href="https://wa.me/01004676670?text=Hello%20there!" ><span className='icon-whatsapp text-[25px] hover:text-green-500'></span> </motion.a>
+                <div className='flex justify-start items-center gap-[15px] mt-[2em] dark:text-gray-200'>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Repositories' target='blank' href="https://github.com/Ahmedabdalnaser2010"><span className='icon-github  text-[35px] dark:text-gray-400 text-black'></span> </a>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Profile' target='blank' href="https://www.linkedin.com/in/ahmed-gamal-395651330/"><span className='icon-linkedin  text-[35px] text-blue-600'></span> </a>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Profile' target='blank' href="https://discord.com/channels/@me"><span className='icon-discord  text-[35px] text-purple-500'></span> </a>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' target='blank' title='Mail me' href="mailto:ahmedabdalnaser2024@gmail.com"><span className='icon-google-plus2  text-[35px] text-red-500'></span> </a>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Contact me' target='blank' href="https://wa.me/01004676670?text=Hello%20there!" ><span className='icon-whatsapp  text-[35px] text-green-500'></span> </a>
+                    <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Follow Me' target='blank' href="https://x.com/AhmedGamal9224" ><FaSquareXTwitter className='text-[40px] text-black dark:text-gray-400' /> </a>
 
-
+                    {/* const socialIconsArray = [{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:}] */}
                 </div>
             </div>
 

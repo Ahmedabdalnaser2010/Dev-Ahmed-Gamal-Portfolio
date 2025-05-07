@@ -150,3 +150,8 @@
 .icon-menu:before {
   content: "\e901";
 }
+
+.icon-typescript:before {
+  content: "\e903";
+  color: #007acc;
+}

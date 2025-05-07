@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import axios from 'axios'
 
 function Projects() {
 
@@ -11,9 +12,9 @@ function Projects() {
 
     const projectsData = async () => {
 
-        const fetchData = await fetch("./data.json")
+        const fetchData = await axios("./data.json")
 
-        const getData = await fetchData.json()
+        const getData = fetchData.data
 
         setProject(getData)
 
@@ -107,6 +108,16 @@ function Projects() {
 
             }
         })
+    let filterTypescript =
+
+        project.filter(ele => {
+
+            if (ele.topics.includes("typescript")) {
+
+                return ele
+
+            }
+        })
 
 
 
@@ -125,7 +136,8 @@ function Projects() {
 
     return (
         <section className='my-[4em]'>
-            <motion.span id='projects' className='text-slate-600 dark:text-white mb-[3em] flex justify-center font-bold text-3xl p-2 w-[220px] m-auto shadow-md rounded-md shadow-gray-400 bg-gray-300' initial={{ scale: 0 }} animate={{}} whileInView={{ scale: 1 }} transition={{ type: "spring", damping: 10, duration: 2 }} >Projects</motion.span>
+            <motion.span id='tools' className='text-sky-500  mb-[3em] flex justify-center font-bold text-3xl p-2 w-[220px] m-auto shadow-md rounded-md shadow-gray-400 bg-gray-100 ' initial={{ scale: 0 }} viewport={{ once: true, amount: 1 }} whileInView={{ scale: 1 }} transition={{ type: "spring", damping: 10, duration: 2 }}>My Projects</motion.span>
+
             <div className=' pb-10 text-slate-50 flex justify-center md:justify-start md:items-start items-center md:flex-row flex-col gap-5'>
 
 
@@ -153,6 +165,11 @@ function Projects() {
                     <button onClick={() => { setFilter(filterReact) }} className="relative inline-flex items-center justify-center w-[130px] md:w-[180px] p-0.5 mb-2  overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br dark:bg-zinc-800 bg-zinc-400 focus:dark:bg-zinc-400  text-white hover:text-white hover:dark:text-white hover:bg-slate-900 focus:bg-slate-900 focus:ring-2 ">
                         <span className="w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md ">
                             React JS
+                        </span>
+                    </button>
+                    <button onClick={() => { setFilter(filterTypescript) }} className="relative inline-flex items-center justify-center w-[130px] md:w-[180px] p-0.5 mb-2  overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br dark:bg-zinc-800 bg-zinc-400 focus:dark:bg-zinc-400  text-white hover:text-white hover:dark:text-white hover:bg-slate-900 focus:bg-slate-900 focus:ring-2 ">
+                        <span className="w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md ">
+                            Typescript
                         </span>
                     </button>
 
