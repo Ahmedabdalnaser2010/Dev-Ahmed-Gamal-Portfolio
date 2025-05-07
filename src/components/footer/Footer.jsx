@@ -1,17 +1,18 @@
 import React from 'react'
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     return (
 
 
-        <footer className="bg-gray-100 rounded-lg shadow dark:bg-zinc-800 mx-4 mt-4 ">
+        <footer className="bg-gray-100 rounded-lg shadow dark:bg-zinc-800  mt-4 w-full ">
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <div className="flex items-center justify-center flex-col sm:flex-row sm:justify-between sm:items-center gap-y-4">
                     {/* <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                         <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
                     </a> */}
-                    <ul className="flex flex-wrap justify-between items-start m-auto md:mx-[0]  w-[200px] md:w-[180px] mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                    {/* <ul className="flex flex-wrap justify-between items-start m-auto md:mx-[0]  w-[200px] md:w-[180px] mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
 
 
                         <a title='Visit my Repositories' target='blank' href="https://github.com/Ahmedabdalnaser2010"><span className='icon-github text-[25px] hover:text-black'></span> </a>
@@ -21,10 +22,19 @@ export default function Footer() {
                         <a title='Contact me' target='blank' href="https://wa.me/01004676670?text=Hello%20there!" ><span className='icon-whatsapp text-[25px] hover:text-green-500'></span> </a>
 
 
-                    </ul>
+                    </ul> */}
+                    <div className='flex justify-start items-center gap-[15px]  dark:text-gray-200'>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Repositories' target='blank' href="https://github.com/Ahmedabdalnaser2010"><span className='icon-github  text-[30px] dark:text-gray-400 text-black'></span> </a>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Profile' target='blank' href="https://www.linkedin.com/in/ahmed-gamal-395651330/"><span className='icon-linkedin  text-[30px] text-blue-600'></span> </a>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Visit my Profile' target='blank' href="https://discord.com/channels/@me"><span className='icon-discord  text-[30px] text-purple-500'></span> </a>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' target='blank' title='Mail me' href="mailto:ahmedabdalnaser2024@gmail.com"><span className='icon-google-plus2  text-[30px] text-red-500'></span> </a>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Contact me' target='blank' href="https://wa.me/01004676670?text=Hello%20there!" ><span className='icon-whatsapp  text-[30px] text-green-500'></span> </a>
+                        <a className='hover:scale-[1.2] transition-all duration-300 ease-in-out' title='Follow Me' target='blank' href="https://x.com/AhmedGamal9224" ><FaSquareXTwitter className='text-[30px] text-black dark:text-gray-400' /> </a>
 
+                        {/* const socialIconsArray = [{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:},{icon:,hrf:,title:,color:}] */}
+                    </div>
 
-                    <ul className="flex flex-wrap m-auto md:mx-[0]  items-center justify-between gap-2 mb-6 text-sm font-medium w-[200px] md:w-[240px] text-gray-500 sm:mb-0 dark:text-gray-400 mt-5 md:mt-0">
+                    <ul className="flex flex-wrap m-auto md:mx-[0] items-center justify-between gap-1 mb-6 text-sm font-medium w-[240px] md:w-[240px] text-gray-500 sm:mb-0 dark:text-gray-400 mt-5 md:mt-0">
                         <li className='w-[50px]'>
                             <a href="#about" className="hover:underline me-4 md:me-6 w-[100%] ">About</a>
                         </li>

@@ -10,10 +10,10 @@ import { RiTailwindCssFill } from "react-icons/ri";
 export default function Tools() {
     return (
         <section className='my-[4em] min-h-[80vh]'>
-            <motion.span id='tools' className='text-sky-500  mb-[3em] flex justify-center font-bold text-3xl p-2 w-[220px] m-auto shadow-md rounded-md shadow-gray-400 bg-gray-100 ' initial={{ scale: 0 }} viewport={{ once: true, amount: 1 }} whileInView={{ scale: 1 }} transition={{ type: "spring", damping: 10, duration: 2 }}>Tools</motion.span>
-            <div className='coding m-auto text-slate-600 dark:text-white flex   flex-col w-[280px] md:w-[550px] bg-gray-100 dark:bg-zinc-800 p-6 rounded-xl' >
-                <h2 className='mb-6 w-[100px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-200 dark:bg-zinc-700 font-semibold text-xl'>Coding</h2>
-                <div className='flex justify-evenly flex-wrap items-start'>
+            <motion.span id='tools' className='text-sky-500  mb-[3em] flex justify-center font-bold text-3xl p-2 w-[220px] m-auto shadow-md rounded-md shadow-gray-400 bg-gray-50 ' initial={{ scale: 0 }} viewport={{ once: true, amount: 1 }} whileInView={{ scale: 1 }} transition={{ type: "spring", damping: 10, duration: 2 }}>Tools</motion.span>
+            <div className='coding m-auto text-slate-600 dark:text-white flex   flex-col w-[280px] md:w-[550px] bg-gray-50 dark:bg-zinc-600 p-6 rounded-xl shadow-lg' >
+                <h2 className='mb-6 w-[100px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-100 shadow-md dark:bg-zinc-700 font-semibold text-xl'>Coding</h2>
+                <div className='flex justify-evenly flex-wrap items-start font-normal'>
                     <span className='flex flex-col items-center gap-[10px] w-[90px] p-3 hover:scale-[1.2] cursor-pointer transition-all duration-300 ease-in-out' >
                         <span className='icon-html5 text-[40px]'></span>
                         <span className=''>HTML 5</span>
@@ -38,7 +38,7 @@ export default function Tools() {
                         <span className=''>Vite</span>
                     </motion.span >
                 </div>
-                <h2 className='my-6 w-[100px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-200 dark:bg-zinc-700 font-semibold text-xl'>Styling</h2>
+                <h2 className='my-6 w-[100px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-100 shadow-md dark:bg-zinc-700 font-semibold text-xl'>Styling</h2>
                 <div className='flex justify-evenly flex-wrap items-start'>
                     <motion.span className='flex flex-col items-center gap-[10px] w-[90px] p-3 hover:scale-[1.2] cursor-pointer transition-all duration-300 ease-in-out' >
                         <span className='icon-css3 text-[40px]'></span>
@@ -60,7 +60,7 @@ export default function Tools() {
                     </motion.span >
 
                 </div>
-                <h2 className='my-6 w-[150px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-200 dark:bg-zinc-700 font-semibold text-xl'>Other Tools</h2>
+                <h2 className='my-6 w-[150px] text-center m-auto p-2  rounded-xl text-sky-500 bg-gray-100 shadow-md dark:bg-zinc-700 font-semibold text-xl'>Other Tools</h2>
                 <div className='flex justify-evenly flex-wrap items-start'>
                     <motion.span className='flex flex-col items-center gap-[10px] w-[90px] p-3 hover:scale-[1.2] cursor-pointer transition-all duration-300 ease-in-out' >
                         <span className='icon-git text-[40px]'></span>

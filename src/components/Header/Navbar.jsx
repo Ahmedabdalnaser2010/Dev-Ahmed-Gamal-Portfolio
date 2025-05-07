@@ -48,7 +48,6 @@ function Navbar({ isDark, setIsDark }) {
     }, [isDark])
 
 
-    console.log(isDark)
 
 
     // window.localStorage(module,)
@@ -68,10 +67,10 @@ function Navbar({ isDark, setIsDark }) {
             {displayMenu && <div style={{ width: "90%", left: '50%', transform: "translatex(-50%)", opacity: "0.95" }} className="flex flex-col justify-between absolute top-[80px] gap-3 px-6 py-4 bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white rounded-xl text-sm transition duration-300 shadow-md dark:shadow-md" >
                 <button className="icon-close self-end text-xl hover:animate-pulse" ></button>
                 <ul>
-                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-600"><a className="selection" href="#about">About</a></li>
-                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-600"><a className="selection" href="#tools">Tools</a></li>
-                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-600"><a className="selection" href="#services">Services</a></li>
-                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-600"><a className="selection" href="#projects">Projects</a></li>
+                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#about">About</a></li>
+                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#tools">Tools</a></li>
+                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#services">Services</a></li>
+                    <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#projects">Projects</a></li>
                     {/* <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-600"><a className="selection" href="#contact">Contact</a></li> */}
                     <li className="selection py-2  hover:text-sky-600"><a className="selection" href="#contact">Contact</a></li>
                     {/* <li className="selection py-2 hover:text-cyan-500 "><a href="#source">Sources</a></li> */}
@@ -79,8 +78,8 @@ function Navbar({ isDark, setIsDark }) {
 
             </div>}
 
-            <div style={{ width: "40px", height: "40px", border: "1px solid", borderRadius: "50%" }} className="bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white shadow-md">
-                <button style={{ position: "relative", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} className={`icon-${isDark ? 'brightness-up' : 'moon-o'}  bg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white w-5 text-xl hover:animate-pulse text-center shadow- dark:shadow-md`}
+            <div style={{ width: "40px", height: "40px", border: "1px solid", borderRadius: "50%" }} className="bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white hover:scale-[1.2] transition-all duration-300 ease-in-out shadow-sm-light border-none dark:shadow-white shadow-yellow-400">
+                <button style={{ position: "relative", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} className={`icon-${isDark ? 'brightness-up' : 'moon-o'}  bg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white w-5 text-xl text-center `}
                     onClick={() => setIsDark(!isDark)}></button>
             </div>
         </nav >

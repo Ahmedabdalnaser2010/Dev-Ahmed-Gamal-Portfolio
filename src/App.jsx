@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="body dark:bg-black bg-stone-50">
-      <div className="container  px-4 sm:px-6 md:px-8 mx-auto  w-10/12 dark:bg-zinc-900 bg-white" >
+      <div className="container  px-4 sm:px-6 md:px-8 mx-auto w-11/12  sm:w-10/12 dark:bg-zinc-900 bg-white" >
         <Navbar isDark={isDarkMode} setIsDark={setIsDarkMode} />
         <Suspense fallback={<div className="m-[50%]">Loading...</div>}>
           <About />
