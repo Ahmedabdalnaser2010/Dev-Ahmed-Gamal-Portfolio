@@ -102,9 +102,9 @@ function About() {
                 <div className='flex justify-between items-center'>
                     <div className='w-[300px] sm:w-[450px] md:w-[600px]'>
                         <h1 className='text-3xl text-sky-500  dark:text-white pb-6 font-bold flex gap-5'><span className='text-gray-700 dark:text-gray-200'>I'm</span> <span className='dark:text-sky-400' ref={nameRef}>Ahmed Gamal</span></h1>
-                        <h3 ref={titleRef} className='text-[1.4rem] text-sky-600 dark:text-white pb-6 font-semibold'>Frontend Developer || React JS</h3>
+                        <h3 ref={titleRef} className='text-[1.25rem] text-sky-600 dark:text-white pb-6 font-semibold'>Frontend Developer || React JS</h3>
                         <p ref={textRef} className=' text-slate-600 dark:text-white text-[18px] '>
-                            I am a frontend developer with a solid foundation in modern web technologies and an experience in a creating responsive web projects using<span className='font-semibold text-sky-800 dark:text-sky-400'> HTML5, CSS3, Javascript,Typescript, and React.js</span>. I’m a quick learner who enjoys researching data to enhance my work. I’m eager to help clients build engaging websites, including <span className='font-semibold text-sky-800 dark:text-sky-400'>landing pages,web apps and e-commerce websites</span>.
+                            I am a frontend developer with a solid foundation in modern web technologies and an experience in a creating responsive web projects using<span className='font-semibold text-sky-800 dark:text-sky-400'> HTML5, CSS3, Javascript,Typescript, and React.js.</span> I’m a quick learner who enjoys researching data to enhance my work. I’m eager to help clients build engaging websites, including <span className='font-semibold text-sky-800 dark:text-sky-400'>landing pages, web apps, and e-commerce websites.</span>
                         </p>
                     </div>
                     <div className='w-[40%] hidden lg:flex justify-center'>
@@ -123,7 +123,7 @@ function About() {
 
                     </div>
 
-                    <a href="https://drive.google.com/file/d/1jDM3Nz_Rbx7rpthDGBpgJOlId5iNF5Hq/view?usp=sharing" target='blank'>
+                    <a href="https://drive.google.com/file/d/1JkYYcqJeQEkePtFCml_rRKGrBEsupa7-/view?usp=sharing" target='blank'>
 
                         <button className='flex items-center justify-between px-3 py-2 text-base min-w-[180px] p-0.5   overflow-hidden  font-semibold  rounded-lg group bg-gradient-to-br dark:bg-zinc-600 bg-gray-100 dark:text-white  text-sky-500 hover:text-sky-500  hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 dark:hover:bg-gray-500 '>
                             <img src={cv} alt="CV" className="w-[30px]" />
