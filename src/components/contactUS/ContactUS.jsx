@@ -52,7 +52,7 @@ function ContactUS() {
                                 errors={state.errors}
                             />
                         </div>
-                        <button disabled={state.submitting} className='self-end px-3 py-2 text-base w-[110px] p-0.5 mb-2  overflow-hidden  font-semibold  rounded-lg group bg-gradient-to-br dark:bg-zinc-600 bg-gray-100 dark:text-white  text-sky-500 hover:text-sky-500  hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 dark:hover:bg-gray-500 '>Submit</button>
+                        <button arial-label="Submit" disabled={state.submitting} className='self-end px-3 py-2 text-base w-[110px] p-0.5 mb-2  overflow-hidden  font-semibold  rounded-lg group bg-gradient-to-br dark:bg-zinc-600 bg-gray-100 dark:text-white  text-sky-500 hover:text-sky-500  hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 dark:hover:bg-gray-500 '>Submit</button>
                     </form>
                     <div className='hidden lg:flex'>
                         <Lottie animationData={sendEmail} loop={1} className='scale-[0.7]'></Lottie>

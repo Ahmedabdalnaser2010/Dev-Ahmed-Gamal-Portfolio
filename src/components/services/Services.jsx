@@ -10,15 +10,15 @@ export default function Services() {
             <div className='flex justify-center items-center flex-col md:flex-row gap-10'>
 
                 <motion.span className="w-[280px] h-[350px] max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-zinc-600 dark:border-gray-700 dark:hover:bg-gray-500 flex flex-col items-center justify-center gap-1" initial={{ x: -100, scale: 0 }} viewport={{ once: true, amount: 1 }} whileInView={{ x: 0, scale: 1 }} transition={{ type: "spring", damping: 10, duration: 1 }}>
-                    <img src={serv1} alt="" className='w-[50px] mt-2 ' />
-                    <h5 className="h-[100px] md:h-[60px] pb-2 mb-2 text-[1.3em] text-center  font-bold tracking-tight text-sky-500 ">Web Development</h5>
+                    <img src={serv1} alt="" className='w-[50px] mt-2 ' loading='lazy' />
+                    <h2 className="h-[100px] md:h-[60px] pb-2 mb-2 text-[1.3em] text-center  font-bold tracking-tight text-sky-500 ">Web Development</h2>
                     <p className="font-normal text-slate-600 dark:text-white">
                         Build dynamic and interactive websites using modern JavaScript frameworks such as React. Implement state management, component-based architecture, and responsive design to create high-quality user experiences.
                     </p>
                 </motion.span>
                 <motion.span className="w-[280px] h-[350px] max-w-sm p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-zinc-600 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col items-center justify-center gap-1" initial={{ x: -100, scale: 0 }} viewport={{ once: true, amount: 1 }} whileInView={{ x: 0, scale: 1 }} transition={{ type: "spring", damping: 10, duration: 1 }}>
-                    <img src={serv2} alt="" className='w-[50px] mt-2 ' />
-                    <h5 className="h-[100px] md:h-[60px] pb-2 mb-2 text-[1.3em] text-center font-bold tracking-tight text-sky-500">Website Maintenance </h5>
+                    <img src={serv2} alt="" className='w-[50px] mt-2 ' loading='lazy' />
+                    <h2 className="h-[100px] md:h-[60px] pb-2 mb-2 text-[1.3em] text-center font-bold tracking-tight text-sky-500">Website Maintenance </h2>
                     <p className="font-normal text-slate-600 dark:text-white min-h-[190px]"> Provide ongoing support for existing websites, including content updates, bug fixes, and minor enhancements. Ensure that sites remain functional and up to date with the latest web standards.</p>
                 </motion.span>
 

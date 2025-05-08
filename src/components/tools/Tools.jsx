@@ -33,7 +33,7 @@ export default function Tools() {
                 <motion.span className='flex flex-col items-center gap-[10px] w-[90px] p-3 hover:scale-[1.2] cursor-pointer transition-all duration-300 ease-in-out'>
 
                     <span className=' text-black'>
-                        <img src={icon} alt="s" className='w-[40px]' />
+                        <img src={icon} alt="s" className='w-[40px]' loading='lazy' />
                     </span>
                     <span className=''>Vite</span>
                 </motion.span >
@@ -54,7 +54,7 @@ export default function Tools() {
                 </motion.span >
                 <motion.span className='flex flex-col items-center gap-[10px] w-[90px] p-3 hover:scale-[1.2] cursor-pointer transition-all duration-300 ease-in-out'>
                     <span className=''>
-                        <img src={logo} alt="s" className='w-[40px]' />
+                        <img src={logo} alt="s" className='w-[40px]' loading='lazy' />
                     </span>
                     <span className='text-center'>Flowbite</span>
                 </motion.span >

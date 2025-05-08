@@ -63,9 +63,9 @@ function Navbar({ isDark, setIsDark }) {
                 <li className="hover:text-sky-600"><a href="#contact">Contact</a></li>
                 {/* <li className="hover:text-sky-600"><a href="#source">Sources</a></li> */}
             </ul>
-            <button onClick={() => setDisplayMenu(true)} style={{ display: isMobile ? "block" : "none" }} className="icon-menu dark:shadow-md  text-left text-xl hover:animate-pulsebg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white">   </button>
+            <button arial-label="open menu" onClick={() => setDisplayMenu(true)} style={{ display: isMobile ? "block" : "none" }} className="icon-menu dark:shadow-md  text-left text-xl hover:animate-pulsebg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white">   </button>
             {displayMenu && <div style={{ width: "90%", left: '50%', transform: "translatex(-50%)", opacity: "0.95" }} className="flex flex-col justify-between absolute top-[80px] gap-3 px-6 py-4 bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white rounded-xl text-sm transition duration-300 shadow-md dark:shadow-md" >
-                <button className="icon-close self-end text-xl hover:animate-pulse" ></button>
+                <button arial-label="choose from menu" className="icon-close self-end text-xl hover:animate-pulse" ></button>
                 <ul>
                     <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#about">About</a></li>
                     <li style={{ borderColor: "rgb(59 59 59 / 45%)" }} className="selection py-2 border-b-2  hover:text-sky-500"><a className="selection" href="#tools">Tools</a></li>
@@ -79,7 +79,7 @@ function Navbar({ isDark, setIsDark }) {
             </div>}
 
             <div style={{ width: "40px", height: "40px", border: "1px solid", borderRadius: "50%" }} className="bg-stone-50 dark:bg-zinc-800 text-slate-600 dark:text-white hover:scale-[1.2] transition-all duration-300 ease-in-out shadow-sm-light border-none dark:shadow-white shadow-yellow-400">
-                <button style={{ position: "relative", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} className={`icon-${isDark ? 'brightness-up' : 'moon-o'}  bg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white w-5 text-xl text-center `}
+                <button arial-label="change mode" style={{ position: "relative", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} className={`icon-${isDark ? 'brightness-up' : 'moon-o'}  bg-stone-50 dark:bg-zinc-900 text-slate-600 dark:text-white w-5 text-xl text-center `}
                     onClick={() => setIsDark(!isDark)}></button>
             </div>
         </nav >

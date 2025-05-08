@@ -39,11 +39,11 @@ function Projects() {
 
             <motion.div initial={{ scale: 0, x: 1000 }} animate={{ scale: 1, x: 0 }} transition={{ type: "spring", duration: 1 }} whileHover={{ rotate: 1, scale: 1.02 }} key={proj.id} className=" max-w-sm  dark:border-gray-500 rounded-xl shadow-zinc-400 shadow-inner hover:border-[3px] border-l-zinc-400  bg-gray-200 dark:bg-zinc-600 text-slate-600 dark:text-white w-[300px] " >
                 <a href={proj.homepage} className='shadow-md shadow-zinc-400 '>
-                    <img className="rounded-t-xl h-[180px] w-[100%]" src={proj.image} alt="" />
+                    <img className="rounded-t-xl h-[180px] w-[100%]" src={proj.image} alt={proj.title} loading='lazy' />
                 </a>
                 <div className="p-5 h-[170px] flex flex-col justify-between shadow-inner">
                     <a href={proj.homepage}>
-                        <h5 className="mb-2 text-[1.25em] font-bold tracking-tight  text-sky-500  h-[2em]">{`${proj.name.replace(/-/g, " ")}`}</h5>
+                        <h3 className="mb-2 text-[1.25em] font-bold tracking-tight  text-sky-500  h-[2em]">{`${proj.name.replace(/-/g, " ")}`}</h3>
                     </a>
                     {/* <p className="mb-3 font-bold text-md  text-slate-600 dark:text-white">{proj.topics}</p> */}
                     <p className="mb-3 font-bold text-md  text-slate-600 dark:text-white">{proj.description}</p>
@@ -125,7 +125,7 @@ function Projects() {
 
 
     const filteredList = filterArray.map((items, index) => {
-        return (<button onClick={(e) => { setActiveButton(e.target.innerText); setFilter(items.function) }} key={index} className=" relative flex items-center justify-center w-[130px] md:w-[180px] p-0.5 mb-2  overflow-hidden text-sm font-semibold  rounded-lg group bg-gradient-to-br dark:bg-zinc-600 bg-gray-100 dark:text-white  text-sky-500 hover:text-sky-500  hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 dark:hover:bg-gray-500 " style={{ color: activebutton == items.title ? "#3593de" : "", backgroundColor: activebutton == items.title ? "#cfd0d3" : "" }}>
+        return (<button arial-label="filter by name" onClick={(e) => { setActiveButton(e.target.innerText); setFilter(items.function) }} key={index} className=" relative flex items-center justify-center w-[130px] md:w-[180px] p-0.5 mb-2  overflow-hidden text-sm font-semibold  rounded-lg group bg-gradient-to-br dark:bg-zinc-600 bg-gray-100 dark:text-white  text-sky-500 hover:text-sky-500  hover:bg-gray-200 focus:bg-gray-200 focus:ring-2 dark:hover:bg-gray-500 " style={{ color: activebutton == items.title ? "#3593de" : "", backgroundColor: activebutton == items.title ? "#cfd0d3" : "" }}>
             <span className="w-[100%] active relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md ">
                 {items.title}
             </span>
